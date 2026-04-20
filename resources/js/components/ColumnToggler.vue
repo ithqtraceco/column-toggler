@@ -207,7 +207,7 @@
 <style>
 
     .column-toggler ~ div {
-        @apply ml-1
+        margin-left: 0.25rem;
     }
 
 </style>
