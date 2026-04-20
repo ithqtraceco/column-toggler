@@ -42,7 +42,9 @@
                             :disabled="enableSorting === false"
                             class="flex flex-wrap p-4 space-y-2"
                             item-key="attribute"
-                            :animation="150">
+                            :animation="150"
+                            @start="isDragging = true"
+                            @end="isDragging = false">
 
                             <template #item="{ element }">
 
@@ -95,6 +97,7 @@
             return {
                 state: {},
                 originalState: {},
+                isDragging: false,
                 enableSorting: Nova.config('column_toggler').enable_sorting,
             }
         },
@@ -144,7 +147,7 @@
         },
         watch: {
             async 'tableToolbar.resources'(resources) {
-
+                if (this.isDragging) return
                 const attributes = resources[ 0 ]?.columnToggler
 
                 if (attributes) {
