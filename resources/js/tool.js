@@ -49,6 +49,8 @@ Nova.booting(app => {
     app.mixin({
         mounted() {
 
+            if (this._.vnode.el.querySelector('.column-toggler')) return
+
             if (this._.type?.__file?.endsWith('ResourceTableToolbar.vue')) {
 
                 const container = document.createElement('div')
