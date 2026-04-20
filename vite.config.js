@@ -28,7 +28,7 @@ build: {
 },
 resolve: {
   alias: {
-	'laravel-nova-ui': path.resolve(__dirname, '/application-ithq/vendor/laravel/nova/resources/ui/components'),
+	'laravel-nova-ui': path.resolve(__dirname, '../../laravel/nova/resources/ui/components'),
   },
 },
 })
